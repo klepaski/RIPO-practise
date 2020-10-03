@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Отдел оперативной полиграфии</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+
+<link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+
+/***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+    $("#btn").click(
+		function(){
+			sendAjaxForm('result_form', 'ajax_form', 'http://localhost:3000/order');
+			return false; 
+		}
+	);
+});
+
+function sendAjaxForm(result_form, ajax_form, url) {
+
+    $.ajax({
+        url: url,
+        type: "POST",
+        dataType: "html",
+        data: $("#ajax_form").serialize()+'&item=Книга', // Сеарилизуем объект
+        
+        success: function(response) { //Данные отправлены успешно
+            if (response=='Заказ оформлен успешно!') document.getElementById('result_form').style.color='green';
+            else document.getElementById('result_form').style.color='red';
+            $('#result_form').html(response);
+    	},
+    	error: function(response) { // Данные не отправлены
+            $('#result_form').html(response);
+    	}
+ 	});
+}
+$( document ).ready(function() {
+    $("#btn2").click(
+		function(){
+			sendAjaxContact('result_contact', 'ajax_contact', 'http://localhost:3000/contact');
+			return false; 
+		}
+	);
+});
+
+function sendAjaxContact(result_contact, ajax_contact, url) {
+
+    $.ajax({
+        url: url,
+        type: "POST",
+        dataType: "html",
+        data: $("#ajax_contact").serialize(), // Сеарилизуем объект
+        
+        success: function(response) { //Данные отправлены успешно
+        	$('#result_contact').html(response);
+    	},
+    	error: function(response) { // Данные не отправлены
+            $('#result_contact').html(response);
+    	}
+ 	});
+}
+
+
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+    $(function(){
+        $("#phone").mask("+375(999) 999-99-99");
+    });
+</script>
+
+<script type="text/javascript" src="js/jquery-1-4-2.min.js"></script> 
+<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" /> 
+<script type="text/JavaScript" src="js/slimbox2.js"></script> 
+
+
+</head>
+<body>
+
+<div id="templatemo_body_wrapper">
+
+    <div id="templatemo_header">    
+        <div id="site_title"><a href="index.html">Оперативная полиграфия</a></div>
+        <div style='margin-top:-10px; margin-left: 650px'>
+            <b>Контакты:</b>
+            <br/> +375(17) 373-69-45
+            <br/> +375(29) 359-02-18
+            <br/> e-mail: ripo.izdatel@gmail.com
+            <br/><a href="https://vk.com/centr.uchebnoj.knigi" target="_blank"><img src="images/vk.png" width="25px"></a>
+            <a href="https://www.facebook.com/center.uchebnoj.knigi/" target="_blank"><img src="images/facebook.png" width="25px"></a>
+        </div>
+    </div>
+
+    <div id="templatemo_wrapper"><span id="templatemo_wrapper_top"></span>
+
+        
+        <div id="templatemo_main">
+            
+            <div class="col col13 no_margin_left">
+
+                <h3>Печать</h3>
+                <ul class="tmo_ul_listt">
+                    <li><a href="blanks.html">Бланки</a></li>
+                    <li><a href="brochures.html">Брошюры</a></li>
+                    <li><a href="bucklets.html">Буклеты</a></li>
+                    <li><a href="cards.html">Визитки</a></li>
+                    <li><a href="diplomas.html">Грамоты</a></li>
+                    <li><a href="journals.html">Журналы учебные</a></li>
+                    <li class='active'><a href="books.html"><b>Книги</b></a></li>
+                    <li><a href="flayers.html">Листовки</a></li>
+                    <li><a href="postcards.html">Открытки</a></li>
+                </ul>
+
+            </div>
+            <div class="col col23 no_margin_right">
+                
+                <div>
+                <h1 class="main">Книги</h1>
+                <img src="images/mockups/книга 1.jpg" width="300px" class="img_fl" />
+                <img src="images/mockups/книга 2.jpg" width="300px" class="img_fl" />
+            </div>
+
+                <!--class="col coldesc"
+                div class="col colmock no_margin_right"-->
+                <!--/div-->
+                
+                <div class="cleaner h40"></div>
+                <h2>Оформление заказа</h2>
+
+                <div id="order_form">
+                    <form method="post" id="ajax_form">
+                        <div id="result_form"></div>
+                        <input type="text" id="author" placeholder="Имя" name="author" class="required input_field" /><br/>
+                        <input type="text" id="email" placeholder="Email" name="email" class="validate-email required input_field" /><br/>
+                        <input type="text" id="phone" placeholder="Телефон" name="phone" class="validate-phone required input_field" /><br/>
+                        <textarea id="order" placeholder="Ваш заказ" name="order" rows="0" cols="0" class="required"></textarea><br/>
+                        <input type="submit" value="Отправить" id="btn" class="submit_btn float_l"/>
+                        
+                     </form>
+              </div>
+
+            </div>
+            <div class="cleaner"></div>
+        </div>
+    </div>
+    <div id="templatemo_bottom">
+        <div class="col col14">
+            <h4 class="white">Карта проезда</h4>
+            <a href="https://yandex.by/maps/-/CBQ7iGVA~A" target="_blank">
+                <img src="images/karta.jpg" alt width="95%">
+            </a>
+            <a href="https://yandex.by/maps/-/CBQ7iGVA~A" target="_blank">Подробнее</a>
+        </div>
+
+        <div class="col col14">
+            <h4 class="white">Контактная информация</h4>
+            <b>РИПО</b><br />
+            ул. К.Либкнехта, 32, к. 101<br />
+            220004, Минск<br />
+            Республика Беларусь<br /><br />
+                    
+            <b>Телефоны:</b> <br />
+            +375 17 373 69 45 <br />
+            +375 29 359 02 18 <br /><br />
+            <b>Email:</b> <br />
+            <a href="mailto:ripo.izdatel@gmail.com">ripo.izdatel@gmail.com</a>  <br />
+        </div>
+                
+        <div class="col col14">
+            <h4 class="white">О нас</h4>
+            <p>
+                © Республиканский институт профессионального образования
+
+                Адрес: ул. К. Либкнехта, 32, 220004, г. Минск, Беларусь
+                                
+                Зарегистрирован в государственном реестре информационных ресурсов Беларуси: №1140600451 от 10.05.2006 г.</p>
+        </div>
+
+        <h4 class="white">Обратная связь</h4>
+            
+        <div class="col col14 bo_margin_right" id="newsletter">
+            <form method="post" id="ajax_contact">
+                <input type="text" placeholder="Ваше имя" id="author" name="author"  class="txt_field" /> <br/>
+                <input type="text" placeholder="Email" id="email" name="email" class="txt_field" />
+                <input type="text" placeholder="Телефон" id="phone" name="phone" class="txt_field" />
+                <textarea id="text" placeholder="Сообщение" name="text" rows="0" cols="0"  class="txt_area"></textarea>
+                <input type="submit" name="Subscribe" value=" Отправить " alt="Subscribe" id="btn2" title=" Subscribe " class="subscribe_btn"  />
+              <br/><div id="result_contact"></div>
+              <div class="cleaner"></div>
+            </form>
+            <div class="cleaner"></div>
+        </div>
+        
+        <div class="cleaner"></div>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/imask"></script>
+<script>
+    var element = document.getElementById('phone');
+    new IMask(element, {mask: '+{375}(00) 000-00-00'})
+</script>
+</body>
+</html>
